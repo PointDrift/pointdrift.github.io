@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Mono:400');
+
+/*Logo on banner*/
+.combinedLogo {
+    float: right;
+    padding: 50px 20px;
+}
+
+.pointLogo {
+    animation-name: logoFloat;
+    animation-duration: 0.5s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(.5, .15, .5, .86);
+
+    position: fixed;
+    height: 20px;
+    width: 20px;
+    background-color: #DD907F;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+@keyframes logoFloat {
+    from {
+        top: 32px;
+    }
+    to {
+        top: 35px
+    }
+}
+
+.pointShadow {
+    animation-name: shadowExpand;
+    animation-duration: 0.5s;
+    animation-direction: alternate;
+    animation-timing-function: cubic-bezier(.5, .14, .5, .86);
+    animation-iteration-count: infinite;
+
+    position: fixed;
+    top: 65px;
+    height: 5px;
+    width: 20px;
+    background-color: Grey;
+    border-radius: 50%;
+    display: inline-block;
+    margin: auto;
+}
+
+@keyframes shadowExpand {
+    from {
+        transform: scaleX(1);
+    }
+    to {
+        transform: scaleX(0.94);
+    }
+}
+/*text entry animation*/
+@keyframes text-focus-in {
+    0% {
+        filter: blur(5px);
+        opacity: 0;
+    }
+    100% {
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+
+/*404 error text shake*/
+.errorText{
+    font-family: "Fira Mono";
+    animation: vibrate 0.3s linear infinite both;
+    align-self: center;
+}
+@keyframes vibrate {
+    0% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(-2px, 2px);
+    }
+    40% {
+        transform: translate(-2px, -2px);
+    }
+    60% {
+        transform: translate(2px, 2px);
+    }
+    80% {
+        transform: translate(2px, -2px);
+    }
+    100% {
+        transform: translate(0);
+    }
+}
+
+/*not used*/
+@keyframes blobulate {
+    0%,
+    100% {
+        border-radius: 33% 67% 70% 30% / 30% 40% 70% 70%;
+    }
+    20% {
+        border-radius: 37% 63% 51% 49% / 37% 35% 35% 63%;
+    }
+    40% {
+        border-radius: 36% 64% 64% 36% / 64% 48% 52% 26%;
+    }
+    60% {
+        border-radius: 37% 63% 51% 49% / 30% 30% 70% 73%;
+    }
+    80% {
+        border-radius: 40% 60% 42% 58% / 51% 51% 49% 59%;
+    }
+}
+
+/*wave animation*/
+.wave,
+.wave::before,
+.wave::after {
+    content: '';
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 250vw;
+    height: 250vw;
+    margin-left: -125vw;
+    transform-origin: 50% 50%;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 38% 42%;
+    box-shadow: inset 0 0 10vw #E2D1F9;
+    animation: spin 25s infinite linear;
+    mix-blend-mode: hard-light;
+}
+
+.wave::before {
+    width: 105%;
+    height: 95%;
+    margin-top: -125vw;
+    transform-origin: 49% 51%;
+    border-radius: 40% 38%;
+    box-shadow: inset 0 0 10vw #FFFFFF;
+    animation: spin 22s infinite linear;
+}
+
+.wave::after {
+    width: 102%;
+    height: 98%;
+    margin-top: -125vw;
+    transform-origin: 51% 49%;
+    border-radius: 48% 42%;
+    box-shadow: inset 0 0 10vw #FF69B4;
+    animation: spin 19s infinite linear;
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
